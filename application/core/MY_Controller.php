@@ -25,6 +25,7 @@ class Application extends CI_Controller {
         $this->data['title'] = '?';
         $this->errors = array();
         $this->data['pageTitle'] = '??';
+        $this->load->library('session');
     }
 
     /**
@@ -36,7 +37,17 @@ class Application extends CI_Controller {
 
         // finally, build the browser page!
         $this->data['data'] = &$this->data;
-        $this->parser->parse('_template', $this->data);
+
+        $user[] = $this->session->userdata('username');
+            if( $user[0]=='None'){
+                 
+                 $this->parser->parse('_template', $this->data);
+            }
+            else{
+                $this->parser->parse('_template1', $this->data);
+           
+      }
+        
     }
 
 }

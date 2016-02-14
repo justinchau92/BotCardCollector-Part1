@@ -30,12 +30,10 @@ if (!defined('APPPATH'))
                     <a href="/assembly">Assembly</a>
                 </li>
                 <div align="right">
-
                 <li>
-                <input id="main_category_lan1"/>
-
-                <button onclick="window.location.assign('/index.php/Welcome/logon/'+document.getElementById('main_category_lan1').value)"> Log in </button>
+                {user}
                 </li>
+                <button onclick="window.location.assign('/index.php/Welcome/logout')"> Log Out </button>
                 </div>
                 
             </ul>
