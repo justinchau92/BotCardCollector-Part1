@@ -27,7 +27,7 @@ if (!defined('APPPATH'))
                     <a href="/index.php/Portfolio">Portfolio</a>
                 </li>
                 <li>
-                    <a href="/assembly">Assembly</a>
+                    <a href="/index.php/Assembly">Assembly</a>
                 </li>
                 <div align="right">
 

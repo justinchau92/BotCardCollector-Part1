@@ -6,7 +6,7 @@
 */
 
 ?>
-
+<a href="/index.php/Portfolio/{Player}">
 Player Name: {Player} Player Peanuts: {Peanuts}</br>
-
+</a>
 
