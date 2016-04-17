@@ -6,7 +6,9 @@
 */
 
 ?>
-<a href="/index.php/Portfolio/{Player}">
-Player Name: {Player} Player Peanuts: {Peanuts}</br>
-</a>
 
+<tr>
+	<td ><img src="/{Avatar}" height="120" width="120"/></td>
+	<td >{Player}</td>
+	<td >{Peanuts}</td>
+</tr>

@@ -10,7 +10,11 @@
 		<div class="row equal">
 			<div class="panel panel-primary">
     		<div class="panel-heading">Transaction Info</div>
-    		<div class="panel-body"> {trade}</div>
+    		<div class="panel-body">
+
+    			{trade}
+    		
+    		 </div>
 			</div>
 
 

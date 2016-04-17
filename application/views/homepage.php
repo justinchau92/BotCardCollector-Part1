@@ -13,6 +13,20 @@
     <div class="panel-heading">Player Info</div>
     <div class="panel-body"> {players}</div>
 	</div>
+
+	<div class="panel panel-primary">
+    <div class="panel-heading">Round Info</div>
+    <div class="panel-body"> 
+    					Round: {Round}</br>
+    					Current State: {Status}</br>
+    					Duration: {Duration}</br>
+    					Next State: {Next}</br>
+    					State End Time: {EndTime}</br>
+    					Current Time: {Time}</br>
+    </div>
 	</div>
 	</div>
+	</div>
+
+
 

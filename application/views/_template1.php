@@ -1,6 +1,14 @@
 <?php
 if (!defined('APPPATH'))
     exit('No direct script access allowed');
+/*
+    File: _template1.php
+    Authors: Adam, Matthew, Maxwell, Justin
+
+    Description: Template1 is the secondary template for this site the main diffrence is that this is used when 
+    a user is logged on as it has a logout button where the login section is on the main 
+    template.
+*/
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,11 +37,14 @@ if (!defined('APPPATH'))
                 <li>
                     <a href="/index.php/Assembly">Assembly</a>
                 </li>
+                <li>
+                    <a href="/index.php/Player_page">Player Page</a>
+                </li>
                 <div align="right">
                 <li>
                 {user}
                 </li>
-                <button onclick="window.location.assign('/index.php/Welcome/logout')"> Log Out </button>
+                <button onclick="logoutFunction()"> Log Out </button>
                 </div>
                 
             </ul>
@@ -44,7 +55,7 @@ if (!defined('APPPATH'))
                 Copyright &copy; 2014-2015,  <a href="mailto:someone@somewhere.com">Me</a>.
             </div>
         </div>
-        <script src="/assets/js/jquery-1.11.1.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="/assets/js/logon.js"></script>
     </body>
 </html>

@@ -2,5 +2,11 @@
 
 
 ?>
-Transaction Date: {DateTime} Player Name: {Player} Series: {Series} Transaction Type: {Trans}</br>
+<tr>
+	<td>{DateTime}</td>
+	<td>{Player}</td>
+	<td>{Series}</td>
+	<td >{Trans}</td>
+</tr>
+
 

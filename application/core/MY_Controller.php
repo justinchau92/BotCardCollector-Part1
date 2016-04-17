@@ -21,13 +21,17 @@ class Application extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        
         $this->data = array();
-        $this->data['title'] = '?';
+        $this->data['title'] = 'MJAM';
         $this->errors = array();
-        $this->data['pageTitle'] = '??';
+        $this->data['pageTitle'] = 'MJAM';
         $this->load->library('session');
-    }
 
+        
+
+    }
+    
     /**
      * Render this page
      */
@@ -39,7 +43,7 @@ class Application extends CI_Controller {
         $this->data['data'] = &$this->data;
 
         $user[] = $this->session->userdata('username');
-            if( $user[0]=='None'){
+            if( $user[0]=='None' or !isset($user[0])){
                  
                  $this->parser->parse('_template', $this->data);
             }

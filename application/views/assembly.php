@@ -20,6 +20,7 @@
     		<div class="panel-body"> {Leg}</div>
 			</div>
 		</div>
+		<button onclick="window.location.assign('/index.php/Welcome/Buy')"><img src="/assets/img/button.png" alt="Submit"></button>
 	</div>
 	<div class="panel panel-primary">
     		<div class="panel-heading">Assembled Bot</div>
@@ -28,4 +29,5 @@
 	
 	<button onclick="window.location.assign('/index.php/Assembly/assemble/'+document.getElementById('Head').value + '/' + 
 					document.getElementById('Body').value + '/' + document.getElementById('Leg').value)"> Assemble </button>
+	<button onclick="sellFunction()"> Sell </button>
 	</div>

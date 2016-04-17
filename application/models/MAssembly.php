@@ -7,7 +7,7 @@
 
 		
 
-
+		//Gets top cards
 		function get_player_Head($name) 
 		{
 			$this->db->order_by('Piece');
@@ -23,7 +23,7 @@
 
         return $return;
 		}
-
+		//Gets Middle cards
 		function get_player_Body($name) 
 		{
 			$this->db->order_by('Piece');
@@ -40,7 +40,7 @@
         return $return;
 		}
 
-
+		//Gets bottom cards
 		function get_player_Leg($name) 
 		{
 			$this->db->order_by('Piece');
@@ -57,7 +57,7 @@
         return $return;
 		}
 
-
+		//Gets complete cards
 		function get_complete($num1, $num2, $num3, $name) 
 		{
 			$where_au = "(Player = '".$name."' AND (`Piece` = '".$num1."' OR `Piece` = '".$num2."' OR `Piece` = '".$num3."'))";

@@ -4,7 +4,7 @@
 		function __construct(){
 			parent::__construct();
 		}
-
+		//Retrive specific player transaction
 		function get_player_trans($name) 
 		{
 			$this->db->order_by('DateTime');
@@ -13,7 +13,7 @@
 			return $query->result_array();
 		}
 
-
+		//Retrive specific player collection
 		function get_player_collection($name) 
 		{
 			$this->db->order_by('Piece');
@@ -22,7 +22,7 @@
 			return $query->result_array();
 		}
 
-
+		//Create dropdown of all players
 		function get_dropdown_list()
 		{
 			$this->db->from('Players');
@@ -39,4 +39,5 @@
 
 		}
 
+	
 	}
