@@ -77,10 +77,7 @@ INSERT INTO `collections` (`Token`, `Piece`, `Player`, `Datetime`) VALUES
 
 DROP TABLE IF EXISTS `players`;
 CREATE TABLE IF NOT EXISTS `players` (
-`Avatar` varchar(28) Default NULL,
   `Player` varchar(6) DEFAULT NULL,
-  `Password` varchar(12) Default NULL,
-  `Status` varchar(6) DEFAULT NULL,
   `Peanuts` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -88,12 +85,11 @@ CREATE TABLE IF NOT EXISTS `players` (
 -- Dumping data for table `players`
 --
 
-INSERT INTO `players` (`Avatar`, `Player`, `Password`, `Status`, `Peanuts`) VALUES
-('assets/img/DefaultAvatar.png','Maxwell', 'P@$$w0rd', 'Admin', 100),
-('assets/img/DefaultAvatar.png','Mickey', 'P@$$w0rd', 'Player', 100),
-('assets/img/DefaultAvatar.png','Donald', 'P@$$w0rd', 'Player', 100),
-('assets/img/DefaultAvatar.png','George', 'P@$$w0rd', 'Player', 100),
-('assets/img/DefaultAvatar.png','Henry', 'P@$$w0rd', 'Player', 100);
+INSERT INTO `players` (`Player`, `Peanuts`) VALUES
+('Mickey', 200),
+('Donald', 35),
+('George', 500),
+('Henry', 100);
 
 -- --------------------------------------------------------
 
@@ -120,13 +116,6 @@ INSERT INTO `series` (`Series`, `Description`, `Frequency`, `Value`) VALUES
 
 -- --------------------------------------------------------
 
-Drop Table IF EXISTS `rounds`;
-CREATE TABLE IF NOT EXISTS `rounds` (
-  `Round` varchar(10) NOT NULL,
-    `Status` varchar(10) Default NULL,
-    `Token` varchar(100) Default NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Table structure for table `transactions`
 --
@@ -139,14 +128,12 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `Trans` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-
 --
 -- Dumping data for table `transactions`
 --
 
 INSERT INTO `transactions` (`DateTime`, `Player`, `Series`, `Trans`) VALUES
-('2016.02.01-09:01:00', 'Maxwel', '11', 'buy'),
+('2016.02.01-09:01:00', 'Mickey', '11', 'sell'),
 ('2016.02.01-09:01:05', 'Henry', 'x', 'buy'),
 ('2016.02.01-09:01:10', 'Mickey', 'x', 'buy'),
 ('2016.02.01-09:01:15', 'Donald', '13', 'sell'),
