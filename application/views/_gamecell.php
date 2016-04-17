@@ -6,5 +6,10 @@
 */
 
 ?>
-Series Name: {Series} Series Description: {Description}</br>
+
+	{Series}
+
+<td>
+	{Description}
+</td>
 
