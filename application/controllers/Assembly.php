@@ -80,54 +80,5 @@ class Assembly extends Application {
             $this->render();
       } 
 
-      function sellComplete()
-      {
-            $this->load->library('session');
-            $this->load->model('Players');
-            if(substr($this->input->post('top'), 0, 2) == substr($this->input->post('middle'), 0, 2) and substr($this->input->post('top'), 0, 2) == substr($this->input->post('bottom'), 0, 2)){
-            $series = substr($this->input->post('top'), 0, 2);
-            $top = $this->Players->getToken($this->input->post('top')); // find token from peice name
-            $middle = $this->Players->getToken($this->input->post('middle'));
-            $bottom = $this->Players->getToken($this->input->post('bottom'));
-            echo "Start";
-            echo $this->session->userdata('token');
-            echo $top;
-            echo $middle;
-            echo $bottom;
-            $fields_string = '';
-            $url = 'botcards.jlparry.com/sell';
-            $fields = array(
-                  'team'=>urlencode('B07'),
-                  'token'=>urlencode($this->session->userdata('token')),
-                  'player'=>urlencode($this->session->userdata('username')),
-                  'top'=>urlencode($top),
-                  'middle'=>urlencode($bottom),
-                  'bottom'=>urlencode($middle)
-            );
-
-            //url-ify the data for the POST
-            foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-            rtrim($fields_string,'&');
-
-            //open connection
-            $ch = curl_init();
-
-            //set the url, number of POST vars, POST data
-            curl_setopt($ch,CURLOPT_URL,$url);
-            curl_setopt($ch, CURLOPT_HEADER, "Content-Type:application/xml");
-            curl_setopt($ch,CURLOPT_POST,count($fields));
-            curl_setopt($ch,CURLOPT_POSTFIELDS,$fields_string);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-            //execute post
-            $result = curl_exec($ch);
-            echo $result;
-            curl_close($ch);
-            $this->Players->addPeanuts($this->session->userdata('username'), $series);
-            $this->Players->sellCard($top);
-            $this->Players->sellCard($middle);
-            $this->Players->sellCard($bottom);
-            $this->index();
-      }
-      }   
+      
 }

@@ -15,25 +15,6 @@ class Welcome extends Application {
 	
 	public function index()
 	{
-            //$this->register();
-            // Load all Libraries and Models used.
-            $this->register();
-		        $this->load->model('Players');
-		        $this->load->model('Game');
-            $this->load->library('session');
-            $this->load->library('table');
-
-            $this->load->model('Agent');
-            $url = 'botcards.jlparry.com/status';
-            //open connection
-            $status = curl_init();
-            //set the url, number of POST vars, POST data
-            curl_setopt($status,CURLOPT_URL,$url);
-            curl_setopt($status, CURLOPT_RETURNTRANSFER, true);
-            //execute post
-            $result = curl_exec($status);
-            $xml = new SimpleXMLElement($result);
-            
 
             // Attempt to load user name from session data
             $user[] = $this->session->userdata('username');
@@ -139,47 +120,7 @@ class Welcome extends Application {
             $this->index();
       }
 
-      public function buy()
-      {
-          $this->load->library('session');
-          $this->load->model('Players');
-          $fields_string = '';
-            $url = 'botcards.jlparry.com/buy';
-            $fields = array(
-                  'team'=>urlencode('B07'),
-                  'token'=>urlencode($this->session->userdata('token')),
-                  'player'=>urlencode($this->session->userdata('username'))
-            );
-
-            //url-ify the data for the POST
-            foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-            rtrim($fields_string,'&');
-
-            //open connection
-            $ch = curl_init();
-
-            //set the url, number of POST vars, POST data
-            curl_setopt($ch,CURLOPT_URL,$url);
-            curl_setopt($ch, CURLOPT_HEADER, "Content-Type:application/xml");
-            curl_setopt($ch,CURLOPT_POST,count($fields));
-            curl_setopt($ch,CURLOPT_POSTFIELDS,$fields_string);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-            //execute post
-            $result = curl_exec($ch);
-            echo $result;
-            curl_close($ch);
-            $xml = new SimpleXMLElement($result);
-
-            foreach ($xml->certificate as $element) {
-            $this->Players->addCards( $element->player, $element->token, $element->piece, $element->datetime);
-            $player = $element->player;
-            }
-            $this->Players->buyCards($player);
-            $this->index();  
-
-
-      }
+    
       
       
 
