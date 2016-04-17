@@ -1,4 +1,10 @@
 <?php
+/*
+    File: _template.php
+    Authors: Adam, Matthew, Maxwell, Justin
+
+    Description: _template.php is the main template it is used when the user is currently logged out.
+*/
 if (!defined('APPPATH'))
     exit('No direct script access allowed');
 ?>
@@ -26,15 +32,13 @@ if (!defined('APPPATH'))
                 <li>
                     <a href="/index.php/Portfolio">Portfolio</a>
                 </li>
-                <li>
-                    <a href="/index.php/Assembly">Assembly</a>
-                </li>
                 <div align="right">
 
                 <li>
-                <input id="main_category_lan1"/>
-
-                <button onclick="window.location.assign('/index.php/Welcome/logon/'+document.getElementById('main_category_lan1').value)"> Log in </button>
+                <input id="username" >Username</input>
+                <input id="password" type="password">Password</input>
+                <button onclick="window.location.assign('/index.php/Register/index/')"> Register </button>
+                <button onclick="logonFunction()"> Log in </button>
                 </li>
                 </div>
                 
@@ -46,7 +50,7 @@ if (!defined('APPPATH'))
                 Copyright &copy; 2014-2015,  <a href="mailto:someone@somewhere.com">Me</a>.
             </div>
         </div>
-        <script src="/assets/js/jquery-1.11.1.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="/assets/js/logon.js"></script>
     </body>
 </html>
